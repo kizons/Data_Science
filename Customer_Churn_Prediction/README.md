@@ -89,7 +89,7 @@ jupyter notebook notebooks/EDA.ipynb
 |------------------|----------|----------|---------|
 | Logistic Regression | 77.7%   | 0.48     | 0.81    |
 | Random Forest    | 94.5%   | 0.81     | 0.92    |
-| XGBoost          | 96.9.3%   | 0.89     | 0.92    |
+| XGBoost          | 96.9%   | 0.89     | 0.92    |
 | Decision Tree    | 94.0%   | 0.81      | 0.90   |
 | KNN   | 81.2%   |  0.32   | 0.60   |
 |  Naive Bayes   | 54.0%   | 0.27   |  0.60   |
@@ -128,5 +128,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-Your Name – [okaforkizito@gmail.com](mailto:okaforkizito@gmail.com)  
+Email: [okaforkizito@gmail.com](mailto:okaforkizito@gmail.com)  
 GitHub: [@kizons](https://github.com/kizons)

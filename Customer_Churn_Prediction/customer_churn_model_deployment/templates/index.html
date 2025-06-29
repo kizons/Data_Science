@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Enter Customer Information</h1>
+        <form action="/predict" method="post">
+            state:
+                <select name="state">
+                <option value="WV">WV</option>
+                <option value="MN">MN</option>
+                <option value="AL">AL</option>
+                <option value="VA">VA</option>
+                <option value="OR">OR</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="NY">NY</option>
+                <option value="NJ">NJ</option>
+                <option value="WY">WY</option>
+                <option value="OH">OH</option>
+                <option value="WI">WI</option>
+                <option value="MA">MA</option>
+                <option value="ME">ME</option>
+                <option value="CT">CT</option>
+                <option value="RI">RI</option>
+                <option value="MI">MI</option>
+                <option value="KS">KS</option>
+                <option value="MD">MD</option>
+                <option value="VT">VT</option>
+                <option value="KY">KY</option>
+                <option value="NV">NV</option>
+                <option value="IN">IN</option>
+                <option value="MS">MS</option>
+                <option value="WA">WA</option>
+                <option value="NC">NC</option>
+                <option value="MO">MO</option>
+                <option value="DE">DE</option>
+                <option value="CO">CO</option>
+                <option value="MT">MT</option>
+                <option value="IL">IL</option>
+                <option value="TN">TN</option>
+                <option value="NM">NM</option>
+                <option value="OK">OK</option>
+                <option value="NH">NH</option>
+                <option value="HI">HI</option>
+                <option value="AZ">AZ</option>
+                <option value="FL">FL</option>
+                <option value="SD">SD</option>
+                <option value="NE">NE</option>
+                <option value="DC">DC</option>
+                <option value="SC">SC</option>
+                <option value="AR">AR</option>
+                <option value="LA">LA</option>
+                <option value="PA">PA</option>
+                <option value="ND">ND</option>
+                <option value="GA">GA</option>
+                <option value="IA">IA</option>
+                <option value="AK">AK</option>
+                <option value="CA">CA</option>
+
+            </select><br><br>
+            account_length: <input type="number" name="account_length"><br><br>
+            area_code:
+            <select name="area_code">
+                <option value="area_code_415">area_code_415</option>
+                <option value="area_code_408">area_code_408</option>
+                <option value="area_code_510">area_code_510</option>
+            </select><br><br>
+            international_plan:
+            <select name="international_plan">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br>
+            voice_mail_plan:
+            <select name="voice_mail_plan">
+                <option value="yes">yes</option>
+                <option value="no">no</option>
+            </select><br><br>
+            number_vmail_messages: <input type="number" name="number_vmail_messages"><br><br>
+            total_day_minutes: <input type="number" name="total_day_minutes"><br><br>
+            total_day_calls: <input type="number" name="total_day_calls"><br><br>
+            total_day_charge: <input type="number" name="total_day_charge"><br><br>
+            total_eve_minutes: <input type="number" name="total_eve_minutes"><br><br>
+            total_eve_calls: <input type="number" name="total_eve_calls"><br><br>
+            total_eve_charge: <input type="number" name="total_eve_charge"><br><br>
+            total_night_minutes: <input type="number" name="total_night_minutes"><br><br>
+            total_night_calls: <input type="number" name="total_night_calls"><br><br>
+            total_night_charge: <input type="number" name="total_night_charge"><br><br>
+            total_intl_minutes: <input type="number" name="total_intl_minutes"><br><br>
+            total_intl_calls: <input type="number" name="total_intl_calls"><br><br>
+            total_intl_charge: <input type="number" name="total_intl_charge"><br><br>
+            number_customer_service_calls: <input type="number" name="number_customer_service_calls"><br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+
+</body>
+</html>

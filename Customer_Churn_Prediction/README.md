@@ -35,8 +35,8 @@ Customer churn prediction is a vital task for subscription-based businesses. The
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/kizons/customer-churn-prediction.git
-cd customer-churn-prediction
+git clone https://github.com/kizons/Data_Science.git
+cd customer_churn_prediction
 pip install -r requirements.txt
 ```
 

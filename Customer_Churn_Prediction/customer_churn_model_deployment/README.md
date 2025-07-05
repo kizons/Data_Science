@@ -31,6 +31,7 @@ customer-churn-flask-app/
 ├── requirements.txt
 ├── flask_app.py
 ├── .gitignore
+├── Dockerfile
 ├── LICENSE
 └── README.md
 ```
@@ -39,14 +40,14 @@ customer-churn-flask-app/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/kizons/Data_Science/tree/main/Customer_Churn_Prediction/customer-churn-flask-app.git
-cd customer-churn-flask-app
+git clone https://github.com/kizons/Data_Science/tree/main/Customer_Churn_Prediction/customer-churn-model-deployment.git
+cd customer-churn-model-deployment
 ```
 
 2. **Create a virtual environment and activate it**
 ```bash
 python -m venv venv
-source venv/bin/activate   # on Windows use `venv\Scripts\activate`
+source venv/bin/activate   # on Windows use `. venv\Scripts\activate`
 ```
 
 3. **Install dependencies**
@@ -60,6 +61,13 @@ python flask_app.py
 ```
 
 Then visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+
+## 🐳 Run with Docker
+
+```bash
+docker build -t churn-prediction-app .
+docker run -p 5000:5000 churn-prediction-app
+```
 
 ## 🛠 Technologies Used
 

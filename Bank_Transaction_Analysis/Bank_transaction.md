@@ -1,4 +1,3 @@
-```sql
 select * from ds_salaries;
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/salaries.csv)
 

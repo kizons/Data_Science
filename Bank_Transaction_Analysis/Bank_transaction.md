@@ -3,51 +3,66 @@
 select * from ds_salaries;
 ``` 
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/salaries.csv)
-
+```sql
 select distinct employment_type, job_title from ds_salaries
 order by job_title;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/employment_type-job_title.csv)
-
+```sql
 select * from ds_salaries where job_title in ('Data Scientist');
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/job_title-data_scientist.csv)
-
+```sql
 select * from ds_salaries where job_title not in ('Data Scientist');
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/job_title-not_data_scientist)
-
+```sql
 select * from ds_salaries where work_year < 2021;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/work_year_before_2021.csv)
-
+```sql
 select avg(salary_in_usd) from ds_salaries where job_title='Data Scientist';
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/avg_salary-data_scientist.csv)
-
+```sql
 select * from ds_salaries where experience_level = 'SE';
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/experience_level-SE.csv)
-
+```sql
 select * from ds_salaries where (1.25 * salary) > 72000;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/1.25_salary_above_72000.csv)
-
+```sql
 select * from ds_salaries where (1.25 * salary) > 72000 and salary_currency = 'USD';
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/1.25_salary_above_72000USD.csv)
-
+```sql
 select k.experience_level, k.work_year, k.salary from ds_salaries k where 'work_year' < 2021;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
-
+```sql
 select * from ds_salaries where work_year = 2022;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
-
+```sql
 select * from ds_salaries where salary between 100000 and 200000;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- 1. order by popularity
+```sql
 select * 
 from ds_salaries
 order by salary_in_usd desc;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- 2. Add popularity column
+```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity
 from ds_salaries;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- 3. Try different functions

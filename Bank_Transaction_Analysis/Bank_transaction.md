@@ -1,4 +1,7 @@
+### SQL Query  
+```sql  
 select * from ds_salaries;
+``` 
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/salaries.csv)
 
 select distinct employment_type, job_title from ds_salaries

@@ -39,15 +39,15 @@ select * from ds_salaries where (1.25 * salary) > 72000 and salary_currency = 'U
 ```sql
 select k.experience_level, k.work_year, k.salary from ds_salaries k where 'work_year' < 2021;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/experience-work-salary-before-2021.csv)
 ```sql
 select * from ds_salaries where work_year = 2022;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/work_year_2022.csv)
 ```sql
 select * from ds_salaries where salary between 100000 and 200000;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/salary_between_10k-20k.csv)
 
 -- 1. order by popularity
 ```sql
@@ -55,7 +55,7 @@ select *
 from ds_salaries
 order by salary_in_usd desc;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/output/salary_in_usd-popularity.csv)
 
 -- 2. Add popularity column
 ```sql
@@ -63,7 +63,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/output/add_popularity_column.csv)
 
 -- 3. Try different functions
 ```sql
@@ -239,16 +239,17 @@ with ms as (select job_title, max(salary_in_usd) as max_salary
 
 select *
 from jt left join ms on jt.job_title = ms.job_title;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
+```sql
 select *
 from ds_salaries
 where job_title like '%Data Scientist%';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
--- recursive CTEs
--- compute cumulative salary for "Data Scientist" year by year:
+-- recursive CTEs: Compute cumulative salary for "Data Scientist" year by year:
 ```sql
 WITH RECURSIVE salary_trend AS (
     SELECT 

@@ -247,5 +247,35 @@ where job_title like '%Data Scientist%';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
-
 -- recursive CTEs
+-- compute cumulative salary for "Data Scientist" year by year:
+```sql
+WITH RECURSIVE salary_trend AS (
+    SELECT 
+        work_year,
+        salary_in_usd,
+        ROW_NUMBER() OVER (ORDER BY work_year) AS rn,
+        salary_in_usd AS cumulative_salary
+    FROM ds_salaries
+    WHERE job_title = 'Data Scientist'
+    
+    UNION ALL
+
+    SELECT 
+        d.work_year,
+        d.salary_in_usd,
+        d.rn,
+        st.cumulative_salary + d.salary_in_usd
+    FROM salary_trend st
+    JOIN (
+        SELECT 
+            work_year,
+            salary_in_usd,
+            ROW_NUMBER() OVER (ORDER BY work_year) AS rn
+        FROM ds_salaries
+        WHERE job_title = 'Data Scientist'
+    ) d ON d.rn = st.rn + 1
+)
+SELECT * FROM salary_trend;
+```
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)

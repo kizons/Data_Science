@@ -66,20 +66,25 @@ from ds_salaries;
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- 3. Try different functions
+```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity,
         rank() over(order by salary_in_usd desc) as popularity_r,
         dense_rank() over(order by salary_in_usd desc) as popularity_dr
 from ds_salaries;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- Try diffent windows
+```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(partition by job_title order by salary_in_usd desc) as popularity
 from ds_salaries;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- 5. what are the top 3 most popular job_titles for each experience_level ?
+```sql
 select * from
 
 (select experience_level, employment_type, job_title, salary_in_usd,
@@ -87,24 +92,30 @@ select * from
 from ds_salaries) as pop
 
 where popularity <=3;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
 
 -- 6. Group by
+```sql
 select job_title, avg(salary_in_usd)
 from ds_salaries
 group by job_title;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- 7. window function
+```sql
 select employment_type, 
 	job_title, 
     avg(salary_in_usd) 
     over(partition by job_title) as avg_salary
 from
 	ds_salaries;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
     
 -- avg, min, max
+```
 select employment_type, 
 	job_title, 
     avg(salary_in_usd) 
@@ -118,9 +129,11 @@ select employment_type,
     
 from
 	ds_salaries;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
     
 -- using group by
+```sql
 select
 	job_title,
     avg(salary_in_usd) avr_salary,
@@ -129,9 +142,11 @@ select
 from
 	ds_salaries
 group by job_title;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- Rank
+```sql
 select employment_type, 
 	job_title, 
     salary_in_usd,
@@ -150,9 +165,11 @@ select employment_type,
     
 from
 	ds_salaries;
+```
  [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)   
     
 -- How many job_title have a maximum salary_in_usd below $20000 ?
+```sql
 select count(*)
 from
 
@@ -161,17 +178,21 @@ from ds_salaries
 group by job_title) as ms
 
 where max_salary < 20000;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- What is the max salary_in_usd for each job_title ?
+```sql
 select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
 group by job_title;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- How many max salary_in_usd are less than $20000 ?
 
 -- subquery
+```sql
 select *
 from
 
@@ -180,9 +201,11 @@ from ds_salaries
 group by job_title) as ms
 
 where max_salary < 20000;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- cte
+```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
 group by job_title)
@@ -190,9 +213,11 @@ group by job_title)
 select *
 from ms
 where max_salary < 20000;
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- cte: multiple references
+```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
 group by job_title)
@@ -200,9 +225,11 @@ group by job_title)
 select count(*)
 from ms
 where max_salary < (select avg(max_salary) from mp);
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 -- cte multiple tables
+```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 		from ds_salaries
 		group by job_title),
@@ -217,6 +244,7 @@ from jt left join ms on jt.job_title = ms.job_title;
 select *
 from ds_salaries
 where job_title like '%Data Scientist%';
+```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
 

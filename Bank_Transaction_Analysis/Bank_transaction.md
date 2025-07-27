@@ -1,40 +1,40 @@
 ```sql
 select * from ds_salaries;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/salaries)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/salaries.csv)
 
 select distinct employment_type, job_title from ds_salaries
 order by job_title;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/employment_type-job_title.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/employment_type-job_title.csv)
 
 select * from ds_salaries where job_title in ('Data Scientist');
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/job_title-data_scientist.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/job_title-data_scientist.csv)
 
 select * from ds_salaries where job_title not in ('Data Scientist');
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/job_title-not_data_scientist)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/job_title-not_data_scientist)
 
 select * from ds_salaries where work_year < 2021;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/work_year_before_2021.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/work_year_before_2021.csv)
 
 select avg(salary_in_usd) from ds_salaries where job_title='Data Scientist';
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/avg_salary-data_scientist.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/avg_salary-data_scientist.csv)
 
 select * from ds_salaries where experience_level = 'SE';
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/experience_level-SE.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/experience_level-SE.csv)
 
 select * from ds_salaries where (1.25 * salary) > 72000;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/1.25_salary_above_72000.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/1.25_salary_above_72000.csv)
 
 select * from ds_salaries where (1.25 * salary) > 72000 and salary_currency = 'USD';
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/1.25_salary_above_72000USD.csv)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output/1.25_salary_above_72000USD.csv)
 
 select k.experience_level, k.work_year, k.salary from ds_salaries k where 'work_year' < 2021;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output)
 
 select * from ds_salaries where work_year = 2022;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output)
 
 select * from ds_salaries where salary between 100000 and 200000;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/Bank_Transaction_Analysis/Output)
 
 -- 1. order by popularity
 select * 

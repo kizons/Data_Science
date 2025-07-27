@@ -1,6 +1,6 @@
 ```sql
 select * from ds_salaries;
-[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/salaries.csv)
+[output](https://github.com/kizons/Data_Science/edit/main/Bank_Transaction_Analysis/Output/salaries)
 
 select distinct employment_type, job_title from ds_salaries
 order by job_title;

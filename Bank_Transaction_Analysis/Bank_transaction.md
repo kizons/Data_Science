@@ -168,7 +168,7 @@ from
 ```
  [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)   
     
--- How many job_title have a maximum salary_in_usd below $20000 ?
+-- How many job_title have a maximum salary_in_usd below $50000 ?
 ```sql
 select count(*)
 from
@@ -177,7 +177,7 @@ from
 from ds_salaries
 group by job_title) as ms
 
-where max_salary < 20000;
+where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
@@ -189,7 +189,7 @@ group by job_title;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
--- How many max salary_in_usd are less than $20000 ?
+-- How many max salary_in_usd are less than $50000 ?
 
 -- subquery
 ```sql
@@ -200,7 +200,7 @@ from
 from ds_salaries
 group by job_title) as ms
 
-where max_salary < 20000;
+where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
@@ -212,7 +212,7 @@ group by job_title)
 
 select *
 from ms
-where max_salary < 20000;
+where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 
@@ -224,7 +224,7 @@ group by job_title)
 
 select count(*)
 from ms
-where max_salary < (select avg(max_salary) from mp);
+where max_salary < (select avg(max_salary) from ms);
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
 

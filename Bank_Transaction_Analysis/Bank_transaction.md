@@ -73,7 +73,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
         dense_rank() over(order by salary_in_usd desc) as popularity_dr
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/output/multiple_functions.csv)
 
 -- Try diffent windows
 ```sql
@@ -81,7 +81,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(partition by job_title order by salary_in_usd desc) as popularity
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/output/partition_by_JT.csv)
 
 -- 5. what are the top 3 most popular job_titles for each experience_level ?
 ```sql
@@ -93,7 +93,7 @@ from ds_salaries) as pop
 
 where popularity <=3;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/Bank_Transaction_Analysis/output/top_3_most_popular_JT.csv)
 
 -- 6. Group by
 ```sql
@@ -101,7 +101,7 @@ select job_title, avg(salary_in_usd)
 from ds_salaries
 group by job_title;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/group_by_JT.csv)
 
 -- 7. window function
 ```sql
@@ -112,7 +112,7 @@ select employment_type,
 from
 	ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/window_function_1.csv)
     
 -- avg, min, max
 ```
@@ -130,20 +130,20 @@ select employment_type,
 from
 	ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/avg_min_max.csv)
     
 -- using group by
 ```sql
 select
 	job_title,
-    avg(salary_in_usd) avr_salary,
+    avg(salary_in_usd) avg_salary,
     min(salary_in_usd) min_salary,
-    max(salary_in_usd) min_salary
+    max(salary_in_usd) max_salary
 from
 	ds_salaries
 group by job_title;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/avg_min_max-salary.csv)
 
 -- Rank
 ```sql
@@ -166,7 +166,7 @@ select employment_type,
 from
 	ds_salaries;
 ```
- [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)   
+ [output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/rank)   
     
 -- How many job_title have a maximum salary_in_usd below $50000 ?
 ```sql
@@ -179,7 +179,7 @@ group by job_title) as ms
 
 where max_salary < 50000;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/max_salary-less-than_50k.csv)
 
 -- What is the max salary_in_usd for each job_title ?
 ```sql
@@ -187,7 +187,7 @@ select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
 group by job_title;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/max_salary-JT.csv)
 
 -- How many max salary_in_usd are less than $50000 ?
 
@@ -202,7 +202,7 @@ group by job_title) as ms
 
 where max_salary < 50000;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/salary_less_than_50k.csv)
 
 -- cte
 ```sql
@@ -214,7 +214,7 @@ select *
 from ms
 where max_salary < 50000;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/CTE_max_salary_less_than_50k.csv)
 
 -- cte: multiple references
 ```sql
@@ -226,7 +226,7 @@ select count(*)
 from ms
 where max_salary < (select avg(max_salary) from ms);
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/CTE-multiple_ref.csv)
 
 -- cte multiple tables
 ```sql
@@ -240,7 +240,7 @@ with ms as (select job_title, max(salary_in_usd) as max_salary
 select *
 from jt left join ms on jt.job_title = ms.job_title;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/CTE-multiple_tables.csv)
 
 ```sql
 select *
@@ -279,4 +279,4 @@ WITH RECURSIVE salary_trend AS (
 )
 SELECT * FROM salary_trend;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/Output)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/CTE-recursive.csv)

@@ -15,7 +15,7 @@ select * from ds_salaries where job_title in ('Data Scientist');
 ```sql
 select * from ds_salaries where job_title not in ('Data Scientist');
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/job_title-not_data_scientist)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/job_title-not_data_scientist.csv)
 ```sql
 select * from ds_salaries where work_year < 2021;
 ```

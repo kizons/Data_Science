@@ -247,7 +247,7 @@ select *
 from ds_salaries
 where job_title like '%Data Scientist%';
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/JT_like_Data_Scientist)
+[output](https://github.com/kizons/Data_Science/blob/main/Bank_Transaction_Analysis/output/JT_like_Data_Scientist.csv)
 
 -- recursive CTEs: Compute cumulative salary for "Data Scientist" year by year:
 ```sql

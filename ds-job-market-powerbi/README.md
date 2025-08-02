@@ -61,7 +61,7 @@ This project provides an interactive Power BI dashboard analyzing data science j
 1. Download or clone this repository:
    ```bash
    git clone https://github.com/kizons/Data_Science.git
-   cd ds-job-market-powerbi
+   cd Data_Science/ds-job-market-powerbi
 2. Open the clean_ds_salaries.pbix file in Power BI Desktop.
 3. Explore each page interactively and apply filters as needed.
 

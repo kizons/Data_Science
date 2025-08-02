@@ -1,6 +1,6 @@
 # 📊 Data Science Job Market Dashboard
 
-This project provides an interactive Power BI dashboard analyzing data science job trends using the [ds_salaries.csv](https://github.com/kizons/Data_Science/blob/main/ds-job-market-powerbi/ds_salaries) dataset. It covers key aspects such as salaries, job titles, remote work trends, experience levels, and geographic distributions.
+This project provides an interactive Power BI dashboard analyzing data science job trends using the [ds_salaries.csv](https://github.com/kizons/Data_Science/blob/main/ds-job-market-powerbi/ds_salaries.csv) dataset. It covers key aspects such as salaries, job titles, remote work trends, experience levels, and geographic distributions.
 
 ---
 

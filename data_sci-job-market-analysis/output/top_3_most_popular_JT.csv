@@ -1,0 +1,123 @@
+experience_level,employment_type,job_title,salary_in_usd,popularity
+MI,PT,"3D Computer Vision Researcher",5409,1
+MI,FT,"AI Scientist",200000,1
+MI,FT,"AI Scientist",120000,2
+SE,FT,"AI Scientist",55000,3
+SE,FT,"Analytics Engineer",205300,1
+SE,FT,"Analytics Engineer",184700,2
+EX,FT,"Analytics Engineer",175000,3
+SE,FT,"Applied Data Scientist",380000,1
+SE,FT,"Applied Data Scientist",177000,2
+MI,FT,"Applied Data Scientist",157000,3
+MI,FT,"Applied Machine Learning Scientist",423000,1
+MI,FT,"Applied Machine Learning Scientist",75000,2
+MI,FT,"Applied Machine Learning Scientist",38400,3
+EX,FT,"BI Data Analyst",150000,1
+MI,FT,"BI Data Analyst",100000,2
+MI,FT,"BI Data Analyst",98000,3
+SE,FT,"Big Data Architect",99703,1
+SE,FT,"Big Data Engineer",114047,1
+SE,FT,"Big Data Engineer",109024,2
+EN,FT,"Big Data Engineer",70000,3
+MI,FT,"Business Data Analyst",135000,1
+EN,CT,"Business Data Analyst",100000,2
+MI,FT,"Business Data Analyst",70912,3
+SE,FT,"Cloud Data Engineer",160000,1
+MI,FT,"Cloud Data Engineer",89294,2
+EN,FT,"Computer Vision Engineer",125000,1
+SE,FL,"Computer Vision Engineer",60000,2
+EN,PT,"Computer Vision Engineer",28609,3
+EN,FT,"Computer Vision Software Engineer",150000,1
+MI,FT,"Computer Vision Software Engineer",95746,2
+EN,FT,"Computer Vision Software Engineer",70000,3
+SE,FT,"Data Analyst",200000,1
+SE,FT,"Data Analyst",170000,2
+SE,FT,"Data Analyst",170000,3
+MI,FT,"Data Analytics Engineer",110000,1
+SE,FT,"Data Analytics Engineer",79197,2
+SE,FT,"Data Analytics Engineer",50000,3
+SE,FT,"Data Analytics Lead",405000,1
+SE,FT,"Data Analytics Manager",150260,1
+SE,FT,"Data Analytics Manager",145000,2
+SE,FT,"Data Analytics Manager",140000,3
+SE,FT,"Data Architect",266400,1
+SE,FT,"Data Architect",213120,2
+SE,FT,"Data Architect",208775,3
+EX,FT,"Data Engineer",324000,1
+SE,FT,"Data Engineer",243900,2
+EX,FT,"Data Engineer",242000,3
+SE,FT,"Data Engineering Manager",174000,1
+SE,FT,"Data Engineering Manager",153000,2
+SE,FT,"Data Engineering Manager",150000,3
+MI,FT,"Data Science Consultant",103000,1
+EN,FT,"Data Science Consultant",90000,2
+EN,FT,"Data Science Consultant",76833,3
+SE,FT,"Data Science Engineer",127221,1
+SE,FT,"Data Science Engineer",60000,2
+MI,FT,"Data Science Engineer",40189,3
+MI,FT,"Data Science Manager",241000,1
+SE,FT,"Data Science Manager",240000,2
+SE,FT,"Data Science Manager",190200,3
+SE,FT,"Data Scientist",412000,1
+SE,FT,"Data Scientist",260000,2
+SE,FT,"Data Scientist",230000,3
+SE,FT,"Data Specialist",165000,1
+SE,FT,"Director of Data Engineering",200000,1
+SE,FT,"Director of Data Engineering",113476,2
+EX,FT,"Director of Data Science",325000,1
+EX,FT,"Director of Data Science",250000,2
+EX,FT,"Director of Data Science",196979,3
+MI,FT,"ETL Developer",54957,1
+MI,FT,"ETL Developer",54957,2
+SE,FT,"Finance Data Analyst",61896,1
+MI,FT,"Financial Data Analyst",450000,1
+EN,FT,"Financial Data Analyst",100000,2
+EX,FT,"Head of Data",235000,1
+EX,FT,"Head of Data",230000,2
+SE,FT,"Head of Data",200000,3
+EX,FT,"Head of Data Science",224000,1
+EX,FT,"Head of Data Science",167875,2
+MI,FT,"Head of Data Science",110000,3
+EX,FT,"Head of Machine Learning",79039,1
+SE,FT,"Lead Data Analyst",170000,1
+MI,FT,"Lead Data Analyst",87000,2
+MI,FT,"Lead Data Analyst",19609,3
+SE,FT,"Lead Data Engineer",276000,1
+SE,FT,"Lead Data Engineer",160000,2
+SE,FT,"Lead Data Engineer",125000,3
+SE,FT,"Lead Data Scientist",190000,1
+MI,FT,"Lead Data Scientist",115000,2
+SE,FT,"Lead Data Scientist",40570,3
+SE,FT,"Lead Machine Learning Engineer",87932,1
+EN,FT,"Machine Learning Developer",100000,1
+SE,FT,"Machine Learning Developer",78791,2
+MI,FT,"Machine Learning Developer",78791,3
+EN,FT,"Machine Learning Engineer",250000,1
+SE,FT,"Machine Learning Engineer",220000,2
+SE,FT,"Machine Learning Engineer",214000,3
+SE,FT,"Machine Learning Infrastructure Engineer",195000,1
+MI,FT,"Machine Learning Infrastructure Engineer",58255,2
+MI,FT,"Machine Learning Infrastructure Engineer",50180,3
+SE,FT,"Machine Learning Manager",117104,1
+SE,FT,"Machine Learning Scientist",260000,1
+EN,FT,"Machine Learning Scientist",225000,2
+SE,FT,"Machine Learning Scientist",225000,3
+SE,FT,"Marketing Data Analyst",88654,1
+MI,CT,"ML Engineer",270000,1
+SE,FT,"ML Engineer",256000,2
+MI,FT,"ML Engineer",77364,3
+MI,FT,"NLP Engineer",37236,1
+SE,FT,"Principal Data Analyst",170000,1
+MI,FT,"Principal Data Analyst",75000,2
+EX,FT,"Principal Data Engineer",600000,1
+SE,FT,"Principal Data Engineer",200000,2
+SE,FT,"Principal Data Engineer",185000,3
+EX,CT,"Principal Data Scientist",416000,1
+SE,FT,"Principal Data Scientist",235000,2
+SE,FT,"Principal Data Scientist",220000,3
+MI,FT,"Product Data Analyst",20000,1
+MI,FT,"Product Data Analyst",6072,2
+MI,FT,"Research Scientist",450000,1
+MI,FT,"Research Scientist",187442,2
+SE,FT,"Research Scientist",144000,3
+SE,CT,"Staff Data Scientist",105000,1

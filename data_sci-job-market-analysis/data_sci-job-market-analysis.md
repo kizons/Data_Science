@@ -1,49 +1,61 @@
 ### SQL Query  
+### select all columns from ds_salaries
 ```sql  
 select * from ds_salaries;
 ``` 
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/salaries.csv)
+### retrieve unique records of employment_type and job
 ```sql
 select distinct employment_type, job_title from ds_salaries
 order by job_title;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/employment_type-job_title.csv)
+### retrieve all columns from ds_salaries where job title is Data Scientist
 ```sql
 select * from ds_salaries where job_title in ('Data Scientist');
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/job_title-data_scientist.csv)
+### retrieve all columns from ds_salaries where job title is not Data Scientist
 ```sql
 select * from ds_salaries where job_title not in ('Data Scientist');
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/job_title-not_data_scientist.csv)
+### retrieve all columns from ds_salaries where work year is before 2021
 ```sql
 select * from ds_salaries where work_year < 2021;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/work_year_before_2021.csv)
+### compute Data Scientist's average salary in usd from ds_salaries 
 ```sql
 select avg(salary_in_usd) from ds_salaries where job_title='Data Scientist';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/avg_salary-data_scientist.csv)
+### retrieve all columns from ds_salaries where experience level is SE
 ```sql
 select * from ds_salaries where experience_level = 'SE';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/experience_level-SE.csv)
+### retrieve all columns from ds_salaries where 125% of salary is less than 72000
 ```sql
 select * from ds_salaries where (1.25 * salary) > 72000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/1.25_salary_above_72000.csv)
+### retrieve all columns from ds_salaries where 125% of salary is less than 72000USD
 ```sql
 select * from ds_salaries where (1.25 * salary) > 72000 and salary_currency = 'USD';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/1.25_salary_above_72000USD.csv)
+### retrieve experience_level, work_year and salary from ds_salaries for work_year before 2021
 ```sql
 select k.experience_level, k.work_year, k.salary from ds_salaries k where 'work_year' < 2021;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/experience-work-salary-before-2021.csv)
+### retrieve all columns from ds_salaries where work_year is 2022
 ```sql
 select * from ds_salaries where work_year = 2022;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/work_year_2022.csv)
+### retrieve all columns from ds_salaries where salary is between 100000 and 200000
 ```sql
 select * from ds_salaries where salary between 100000 and 200000;
 ```

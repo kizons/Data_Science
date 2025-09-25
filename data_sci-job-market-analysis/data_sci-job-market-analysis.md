@@ -61,15 +61,15 @@ select * from ds_salaries where salary between 100000 and 200000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/salary_between_10k-20k.csv)
 
--- 1. order by popularity
+### order by popularity
 ```sql
 select * 
 from ds_salaries
 order by salary_in_usd desc;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/salary_in_usd-popularity.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/salary_in_usd_popularity.csv)
 
--- 2. Add popularity column
+### Add popularity column
 ```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity
@@ -77,7 +77,7 @@ from ds_salaries;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/add_popularity_column.csv)
 
--- 3. Try different functions
+### Try different functions
 ```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity,
@@ -87,7 +87,7 @@ from ds_salaries;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/multiple_functions.csv)
 
--- Try diffent windows
+ ### Try diffent windows
 ```sql
 select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(partition by job_title order by salary_in_usd desc) as popularity
@@ -95,7 +95,7 @@ from ds_salaries;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/partition_by_JT.csv)
 
--- 5. what are the top 3 most popular job_titles for each experience_level ?
+### what are the top 3 most popular job_titles for each experience_level ?
 ```sql
 select * from
 
@@ -107,7 +107,7 @@ where popularity <=3;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/top_3_most_popular_JT.csv)
 
--- 6. Group by
+### Group by
 ```sql
 select job_title, avg(salary_in_usd)
 from ds_salaries
@@ -115,7 +115,7 @@ group by job_title;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/group_by_JT.csv)
 
--- 7. window function
+### window function
 ```sql
 select employment_type, 
 	job_title, 
@@ -126,7 +126,7 @@ from
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/window_function_1.csv)
     
--- avg, min, max
+### avg, min, max
 ```
 select employment_type, 
 	job_title, 
@@ -144,7 +144,7 @@ from
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/avg_min_max.csv)
     
--- using group by
+### using group by
 ```sql
 select
 	job_title,
@@ -157,7 +157,7 @@ group by job_title;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/avg_min_max-salary.csv)
 
--- Rank
+### Rank
 ```sql
 select employment_type, 
 	job_title, 
@@ -180,7 +180,7 @@ from
 ```
  [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/rank)   
     
--- How many job_title have a maximum salary_in_usd below $50000 ?
+### How many job_title have a maximum salary_in_usd below $50000 ?
 ```sql
 select count(*)
 from
@@ -193,7 +193,7 @@ where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/max_salary-less-than_50k.csv)
 
--- What is the max salary_in_usd for each job_title ?
+### What is the max salary_in_usd for each job_title ?
 ```sql
 select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
@@ -201,7 +201,7 @@ group by job_title;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/max_salary-JT.csv)
 
--- How many max salary_in_usd are less than $50000 ?
+### How many max salary_in_usd are less than $50000 ?
 
 -- subquery
 ```sql
@@ -216,7 +216,7 @@ where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/salary_less_than_50k.csv)
 
--- cte
+### CTE
 ```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
@@ -228,7 +228,7 @@ where max_salary < 50000;
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/CTE_max_salary_less_than_50k.csv)
 
--- cte: multiple references
+### CTE: multiple references
 ```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 from ds_salaries
@@ -240,7 +240,7 @@ where max_salary < (select avg(max_salary) from ms);
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/CTE-multiple_ref.csv)
 
--- cte multiple tables
+### CTE: multiple tables
 ```sql
 with ms as (select job_title, max(salary_in_usd) as max_salary
 		from ds_salaries
@@ -261,7 +261,7 @@ where job_title like '%Data Scientist%';
 ```
 [output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/JT_like_Data_Scientist.csv)
 
--- recursive CTEs: Compute cumulative salary for "Data Scientist" year by year:
+### Recursive CTEs: Compute cumulative salary for "Data Scientist" year by year:
 ```sql
 WITH RECURSIVE salary_trend AS (
     SELECT 

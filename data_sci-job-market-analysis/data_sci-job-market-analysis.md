@@ -67,7 +67,7 @@ select *
 from ds_salaries
 order by salary_in_usd desc;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/salary_in_usd_popularity.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/salary_in_usd-popularity.csv)
 
 ### Add popularity column
 ```sql

@@ -67,7 +67,7 @@ select *
 from ds_salaries
 order by salary_in_usd desc;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/salary_in_usd-popularity.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/salary_in_usd-popularity.csv)
 
 ### Add popularity column
 ```sql
@@ -75,7 +75,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(order by salary_in_usd desc) as popularity
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/add_popularity_column.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/add_popularity_column.csv)
 
 ### Try different functions
 ```sql
@@ -85,7 +85,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
         dense_rank() over(order by salary_in_usd desc) as popularity_dr
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/multiple_functions.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/multiple_functions.csv)
 
  ### Try diffent windows
 ```sql
@@ -93,7 +93,7 @@ select experience_level, employment_type, job_title, salary_in_usd,
 		row_number() over(partition by job_title order by salary_in_usd desc) as popularity
 from ds_salaries;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/partition_by_JT.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/partition_by_JT.csv)
 
 ### what are the top 3 most popular job_titles for each experience_level ?
 ```sql
@@ -105,7 +105,7 @@ from ds_salaries) as pop
 
 where popularity <=3;
 ```
-[output](https://github.com/kizons/Data_Science/blob/main/edit/main/data_sci-job-market-analysis/output/top_3_most_popular_JT.csv)
+[output](https://github.com/kizons/Data_Science/blob/main/data_sci-job-market-analysis/output/top_3_most_popular_JT.csv)
 
 ### Group by
 ```sql
